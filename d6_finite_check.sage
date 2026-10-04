@@ -1,5 +1,5 @@
 """
-Exact verification for Proposition 4.5 in Section 4.3.
+Exact verification for Proposition 4.6 in Section 4.3.
 
 The notation follows the manuscript:
 
@@ -13,7 +13,11 @@ For a retained triple (Gamma,p,lambda), the code checks equations
 compatibility relation in the final auxiliary graph.
 
 All computations are exact.  The assertions at the end reproduce the
-numerical counts quoted in the proof of Proposition 4.5.
+numerical counts quoted in the proof of Proposition 4.6.
+
+Manuscript cross-reference: Proposition 4.5 is the finite reduction to
+eight vertices and twenty binary neighborhood vectors; Proposition 4.6
+is the exact finite verification implemented here.
 """
 
 from collections import Counter
@@ -31,7 +35,7 @@ from sage.all import (
 )
 
 
-# Size of the principal block in Proposition 4.4.
+# Size of the principal block in Proposition 4.5.
 N = 8
 TARGET = 20
 VERTICES = list(range(N))
@@ -92,7 +96,7 @@ def polynomial_data(G):
 
 def resultant_reduction(graph_list):
     """
-    Carry out the resultant reduction from the proof of Proposition 4.5.
+    Carry out the resultant reduction from the proof of Proposition 4.6.
 
     Returns the nonsingular triples (graph_index,p,lambda) and a summary of
     the exact counts appearing before the final clique computation.
@@ -303,7 +307,7 @@ def main():
     check_reported_value("cases_by_prime", final_summary["cases_by_prime"])
     check_reported_value("maximum_clique", final_summary["maximum_clique"])
 
-    print("Proposition 4.5 verified.")
+    print("Proposition 4.6 verified.")
 
 
 if __name__ == "__main__":

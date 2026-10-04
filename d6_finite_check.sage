@@ -95,7 +95,8 @@ def resultant_reduction(graph_list):
                     f"|B_h| >= 20 for graph {graph_index} and h = {h}"
                 )
 
-            # This is exactly the necessary inequality (19).
+            # This is exactly the necessary filter (4.13)
+            # [eq:d6-exceptional-filter].
             primes = sorted(
                 p for p, count in prime_count.items() if Bh + count >= 20
             )
@@ -124,7 +125,7 @@ def resultant_reduction(graph_list):
 
 
 def admissible_vectors(G, p, lam_integer):
-    """Return R and the vectors satisfying (11), (13), and (14)."""
+    """Return R and the vectors satisfying (4.5), (4.7), and (4.8)."""
     Fp = GF(p)
     lam = Fp(lam_integer)
     C = G.adjacency_matrix(vertices=VERTICES, base_ring=Fp)
@@ -134,22 +135,22 @@ def admissible_vectors(G, p, lam_integer):
 
     R = B.inverse()
     one = vector(Fp, [1] * N)
-    if one.dot_product(R * one) != 0:                 # equation (14)
+    if one.dot_product(R * one) != 0:                 # equation (4.8) [eq:d6-isotropic]
         return None
 
     candidates = []
     for b0 in BINARY_ZZ:
         b = vector(Fp, b0)
-        if b.dot_product(R * b) != -lam:              # equation (11)
+        if b.dot_product(R * b) != -lam:              # equation (4.5) [eq:d6-norm]
             continue
-        if b.dot_product(R * one) != 1:               # equation (13)
+        if b.dot_product(R * one) != 1:               # equation (4.7) [eq:d6-main]
             continue
         candidates.append(b)
     return R, candidates
 
 
 def compatibility_graph(R, candidates):
-    """Return the auxiliary graph whose edges encode equation (12)."""
+    """Return the auxiliary graph whose edges encode (4.6) [eq:d6-compat]."""
     H = Graph()
     H.add_vertices(range(len(candidates)))
     for i in range(len(candidates)):
@@ -198,7 +199,7 @@ def main():
 
     triples = resultant_reduction(graph_list)
     finite_check(graph_list, triples)
-    print("Proposition 6.5 verified.")
+    print("Proposition 4.5 verified.")
 
 
 if __name__ == "__main__":

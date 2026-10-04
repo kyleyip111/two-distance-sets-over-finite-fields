@@ -200,7 +200,3 @@ def main():
     triples = resultant_reduction(graph_list)
     finite_check(graph_list, triples)
     print("Proposition 4.5 verified.")
-
-
-if __name__ == "__main__":
-    main()

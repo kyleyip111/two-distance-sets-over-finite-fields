@@ -2,6 +2,7 @@
 
 This repository contains the SageMath code accompanying the paper  
 **Two-distance sets over finite fields**.
+by Jozsef Solymosi and Chi Hoi Yip (https://arxiv.org/abs/2512.24590).
 
 The computation verifies the finite graph problem arising in the exceptional
 case of dimension 6. In particular, it rules out a 28-point two-distance set

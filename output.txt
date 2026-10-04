@@ -1,0 +1,13 @@
+8-vertex graph classes: 12346
+relevant factors: 13809
+maximum |B_h|: 16
+exceptional odd primes: 60
+largest exceptional prime: 1367
+witness-root triples before nonsingularity: 17347
+singular triples discarded: 6480
+nonsingular triples: 10867
+auxiliary graphs: 4075
+cases by characteristic: {3: 2455, 5: 1562, 7: 54, 19: 2, 47: 2}
+maximum number of admissible vectors: 48
+maximum clique number: 17
+Proposition 4.5 verified.

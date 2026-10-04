@@ -10,4 +10,4 @@ auxiliary graphs: 4075
 cases by characteristic: {3: 2455, 5: 1562, 7: 54, 19: 2, 47: 2}
 maximum number of admissible vectors: 48
 maximum clique number: 17
-Proposition 6.5 verified.
+Proposition 4.5 verified.
